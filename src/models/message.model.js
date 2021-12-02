@@ -1,21 +1,21 @@
-let Messages = {};
+let messages = {};
 
-Messages.OK_CODE = 200;
-Messages.BAD_REQUEST = 400;
-Messages.UNAUTHORIZED_CODE = 401;
-Messages.FORBIDDEN = 403;
-Messages.NOT_FOUND = 404;
-Messages.NOT_ALLOWED = 405;
-Messages.INTERNAL_ERROR = 500;
+messages.OK_CODE = 200;
+messages.BAD_REQUEST = 400;
+messages.UNAUTHORIZED_CODE = 401;
+messages.FORBIDDEN = 403;
+messages.NOT_FOUND = 404;
+messages.NOT_ALLOWED = 405;
+messages.INTERNAL_ERROR = 500;
 
-Messages.RESPOND_OK_CUSTOM = function (msg) {
+messages.RESPOND_OK_CUSTOM = function (msg) {
   return {
     status: this.RESPOND_OK_CODE,
     message: msg,
   };
 };
 
-Messages.RESPOND_BAD_REQUEST = function (error) {
+messages.RESPOND_BAD_REQUEST = function (error) {
   return {
     status: this.BAD_REQUEST,
     error: 'Bad Request',
@@ -23,7 +23,7 @@ Messages.RESPOND_BAD_REQUEST = function (error) {
   };
 };
 
-Messages.RESPOND_UNAUTHORIZED = function () {
+messages.RESPOND_UNAUTHORIZED = function () {
   return {
     status: this.UNAUTHORIZED_CODE,
     error: 'Unauth­orized',
@@ -31,7 +31,7 @@ Messages.RESPOND_UNAUTHORIZED = function () {
   };
 };
 
-Messages.RESPOND_FORBIDDEN = function () {
+messages.RESPOND_FORBIDDEN = function () {
   return {
     status: this.FORBIDDEN,
     error: 'Forbidden',
@@ -39,7 +39,7 @@ Messages.RESPOND_FORBIDDEN = function () {
   };
 };
 
-Messages.RESPOND_NOT_FOUND = function () {
+messages.RESPOND_NOT_FOUND = function () {
   return {
     status: this.NOT_FOUND,
     error: 'Not Found',
@@ -47,7 +47,7 @@ Messages.RESPOND_NOT_FOUND = function () {
   };
 };
 
-Messages.RESPOND_NOT_ALLOWED = function () {
+messages.RESPOND_NOT_ALLOWED = function () {
   return {
     status: this.NOT_ALLOWED,
     error: 'Method Not Allowed',
@@ -55,7 +55,7 @@ Messages.RESPOND_NOT_ALLOWED = function () {
   };
 };
 
-Messages.RESPOND_INTERNAL_ERROR = function (error) {
+messages.RESPOND_INTERNAL_ERROR = function (error) {
   return {
     status: error.status,
     error: 'Server internal error: ' + error.message,
@@ -63,4 +63,4 @@ Messages.RESPOND_INTERNAL_ERROR = function (error) {
   };
 };
 
-module.exports = Messages;
+module.exports = messages;
