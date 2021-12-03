@@ -1,14 +1,10 @@
 const router = require('express').Router();
 const mangas = require('./mangas.router');
-const login = require('./login.router');
-const reqAuth = require('../middlewares/auth.handler');
-const messages = require('../models/message.model');
+const root = require('./root.router');
+const auth = require('./auth');
 
 router.use('/mangas', mangas);
-router.use('/login', login);
-
-router.get('/', reqAuth.authRole(reqAuth.ROLE.PUBLIC), function (req, res) {
-  res.status(messages.OK_CODE).json(messages.RESPOND_OK_CUSTOM('Consulta la documentacion de la API:'));
-});
+router.use('/auth', auth);
+router.use('/', root);
 
 module.exports = router;

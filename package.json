@@ -14,8 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/boom": "^9.1.4",
+    "compression": "^1.7.4",
     "express": "^4.17.1",
-    "joi": "^17.4.3"
+    "joi": "^17.4.3",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
