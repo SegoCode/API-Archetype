@@ -1,20 +1,22 @@
-//Los endpoint estaticos van antes que los dinamicos
 const router = require('express').Router();
-const MangaService = require('../services/mangas.service');
-const messages = require('./../models/message.model');
-const { createMangaSchema, updateMangaSchema, getMangaSchema } = require('./../models/manga.model');
+const mangaService = require('../services/mangas.service');
+const messages = require('../models/message.model');
+const reqAuth = require('../middlewares/auth.handler');
 
-const service = new MangaService();
+const { createMangaSchema, updateMangaSchema, deleteMangaSchema } = require('./../models/manga.model');
+
+const service = new mangaService();
 
 //GET
-router.get('/', function (req, res) {
+router.get('/', reqAuth.authRole(reqAuth.ROLE.PUBLIC), function (req, res) {
+  //comprobar si la validacion de query es igual que la de body
   const { top } = req.query;
   const total = top || 10;
   res.json(service.find());
 });
 
 //POST
-router.post('/', function (req, res) {
+router.post('/', reqAuth.authRole(reqAuth.ROLE.ADMIN), function (req, res) {
   const validation = createMangaSchema.validate(req.body);
   if (typeof validation.error === 'undefined') {
     res.json(service.create(req.body));
@@ -24,14 +26,23 @@ router.post('/', function (req, res) {
 });
 
 //PUT
-router.put('/', function (req, res) {
-  const jsonBody = req.body;
-  res.json(service.update(jsonBody));
+router.put('/', reqAuth.authRole(reqAuth.ROLE.LOGGED), function (req, res) {
+  const validation = updateMangaSchema.validate(req.body);
+  if (typeof validation.error === 'undefined') {
+    res.json(service.update(req.body));
+  } else {
+    res.status(messages.BAD_REQUEST).json(messages.RESPOND_BAD_REQUEST(validation.error.message));
+  }
 });
 
 //DELETE
-router.delete('/:id', function (req, res) {
-  res.json(service.delete(req.params.id));
+router.delete('/:id', reqAuth.authRole(reqAuth.ROLE.ADMIN), function (req, res) {
+  const validation = deleteMangaSchema.validate(req.params);
+  if (typeof validation.error === 'undefined') {
+    res.json(service.delete(req.params.id));
+  } else {
+    res.status(messages.BAD_REQUEST).json(messages.RESPOND_BAD_REQUEST(validation.error.message));
+  }
 });
 
 module.exports = router;

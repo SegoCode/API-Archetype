@@ -27,7 +27,7 @@ messages.RESPOND_UNAUTHORIZED = function () {
   return {
     status: this.UNAUTHORIZED_CODE,
     error: 'Unauth­orized',
-    message: 'This endpoint need privileges',
+    message: 'This endpoint need more privileges',
   };
 };
 
@@ -57,8 +57,8 @@ messages.RESPOND_NOT_ALLOWED = function () {
 
 messages.RESPOND_INTERNAL_ERROR = function (error) {
   return {
-    status: error.status,
-    error: 'Server internal error: ' + error.message,
+    status: error.status || 500,
+    error: 'Internal server error: ' + error.message,
     message: 'Log generated', //TODO https://www.npmjs.com/package/winston
   };
 };

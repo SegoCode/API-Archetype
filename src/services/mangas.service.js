@@ -1,5 +1,6 @@
-class MangaService {
+class mangaService {
   constructor() {
+    this.id = 4432;
     this.titulo = 'Konosuba';
     this.precio = 12.99;
   }
@@ -33,4 +34,4 @@ class MangaService {
   }
 }
 
-module.exports = MangaService;
+module.exports = mangaService;

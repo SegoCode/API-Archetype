@@ -14,8 +14,8 @@ const updateMangaSchema = Joi.object({
   precio: precio,
 });
 
-const getMangaSchema = Joi.object({
+const deleteMangaSchema = Joi.object({
   id: id.required(),
 });
 
-module.exports = { createMangaSchema, updateMangaSchema, getMangaSchema };
+module.exports = { createMangaSchema, updateMangaSchema, deleteMangaSchema };
