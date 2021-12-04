@@ -1,19 +1,17 @@
 {
-  "name": "myapp",
+  "name": "express-archetype",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "",
-    "start-dev": "nodemon index.js",
-    "start-pre": "set NODE_ENV=preproduction && node index.js",
-    "start-prod": "set NODE_ENV=production && node index.js"
+    "dev": "npm ci & nodemon src/index.js",
+    "prod": "set NODE_ENV=production & node src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@hapi/boom": "^9.1.4",
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "joi": "^17.4.3",
