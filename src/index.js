@@ -9,17 +9,16 @@ const logger = require('./middlewares/logger.conf');
 const router = require('./routes');
 
 const port = process.env.PORT || 8080;
-const processManagerEnabled = false;
+const processManagerEnabled = true;
 
 const app = express();
 
 if (typeof process.env.NODE_ENV !== 'undefined' && process.env.NODE_ENV.trim() === 'production') {
   //Hide console logs in production
   console.log = function () {};
-} else if (!processManagerEnabled) {
-  //Capture petitions logs out of production without procces manager
+} else {
+  // app.use(logger.fileLogger); External file logger middleware
   app.use(logger.consoleLogger);
-  app.use(logger.fileLogger);
 }
 
 app.use(compression());
@@ -39,6 +38,6 @@ if (cluster.isMaster && !processManagerEnabled) {
 } else {
   app.listen(port, () => {
     //Launch server entry point
-    console.log(`Launch ${process.pid} at http://localhost:${port}`);
+    console.log(`🚀 Launch ${process.pid} at http://localhost:${port}`);
   });
 }

@@ -2,7 +2,7 @@ const morgan = require('morgan');// https://expressjs.com/en/resources/middlewar
 const fs = require('fs');
 const path = require('path');
 
-const logFormat = '[:date[iso]] :remote-addr - :method :url :status - :response-time ms';
+const logFormat = ':remote-addr - :method :url :status - :response-time ms';
 const file = {
   logDir: 'logs',
   logFileName: 'api.log',

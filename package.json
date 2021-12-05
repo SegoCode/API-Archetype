@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "",
-    "dev": "npm ci & nodemon src/index.js",
-    "prod": "set NODE_ENV=production & node src/index.js"
+    "dev": "npm ci & pm2 start ./src/index.js --watch --restart-delay 5000 & pm2 monit",
+    "prod": "set NODE_ENV=production & pm2 start ./pm2.prod.config.js"
   },
   "keywords": [],
   "author": "",
@@ -16,8 +16,5 @@
     "express": "^4.17.1",
     "joi": "^17.4.3",
     "morgan": "^1.10.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
   }
 }
