@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "",
-    "dev": "npm ci & pm2 start ./src/index.js --watch --restart-delay 5000 & pm2 monit",
+    "dev": "npm ci & pm2 start ./pm2.dev.config.js & pm2 monit",
     "prod": "set NODE_ENV=production & pm2 start ./pm2.prod.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.24.0",
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "joi": "^17.4.3",

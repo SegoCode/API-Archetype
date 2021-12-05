@@ -3,10 +3,21 @@
 module.exports = {
   apps: [
     {
-      name: 'API_REST_EXPRESS_PROD',
+      name: 'API_EXPRESS',
       script: './src/index.js',
-      instances: 'max',
       exec_mode: 'cluster',
+      instances: 'max',
+      max_restarts: 10,
+      max_memory_restart: '8G',
+    },
+
+    {
+      name: 'API_EXPRESS_HEALTH',
+      script: './src/index.health.js',
+      autorestart: false,
+      exec_mode: 'cluster',
+      instances: '1',
+      max_memory_restart: '8G',
     },
   ],
 };
