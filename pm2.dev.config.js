@@ -7,6 +7,12 @@ module.exports = {
       script: './src/index.js',
       watch: true,
       restart_delay: 5000,
+      out_file: '/dev/null',
+      error_file: '/dev/null',
+      env: {
+        NODE_ENV: 'development',
+        PORT: 80,
+      },
     },
 
     {
@@ -14,6 +20,12 @@ module.exports = {
       script: './src/index.health.js',
       watch: true,
       restart_delay: 5000,
+      out_file: '/dev/null',
+      error_file: '/dev/null',
+      env: {
+        NODE_ENV: 'development',
+        PORT: 81,
+      },
     },
   ],
 };

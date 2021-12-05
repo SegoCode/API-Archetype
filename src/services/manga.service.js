@@ -5,23 +5,11 @@ class mangaService {
     this.precio = 12.99;
   }
 
-  generate() {
-    return this;
-  }
-
-  create(body) {
-    return "hola";
-  }
-
   find() {
     return this;
   }
 
-  findById(id) {
-    return this;
-  }
-
-  findByName(name) {
+  create(body) {
     return this;
   }
 
@@ -30,7 +18,7 @@ class mangaService {
   }
 
   delete(id) {
-      return this;
+    return this;
   }
 }
 

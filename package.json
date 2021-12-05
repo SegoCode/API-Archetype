@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "",
-    "dev": "npm ci & pm2 start ./pm2.dev.config.js & pm2 monit",
-    "prod": "set NODE_ENV=production & pm2 start ./pm2.prod.config.js"
+    "dev": "npm ci & pm2 start ./pm2.dev.config.js & pm2 logs --format",
+    "prod": "pm2 start ./pm2.prod.config.js",
+    "dev_standalone": "set NODE_ENV=development & node ./src/index.js",
+    "prod_standalone": "set NODE_ENV=production & node ./src/index.js"
   },
   "keywords": [],
   "author": "",

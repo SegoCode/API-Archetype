@@ -9,15 +9,26 @@ module.exports = {
       instances: 'max',
       max_restarts: 10,
       max_memory_restart: '8G',
+      out_file: '/dev/null',
+      error_file: '/dev/null',
+      env: {
+        NODE_ENV: 'production',
+        PORT: 3000,
+      },
     },
 
     {
       name: 'API_EXPRESS_HEALTH',
       script: './src/index.health.js',
-      autorestart: false,
       exec_mode: 'cluster',
       instances: '1',
-      max_memory_restart: '8G',
+      max_memory_restart: '500M',
+      out_file: '/dev/null',
+      error_file: '/dev/null',
+      env: {
+        NODE_ENV: 'production',
+        PORT: 3001,
+      },
     },
   ],
 };

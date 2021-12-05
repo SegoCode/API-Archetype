@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const mangaService = require('../services/mangas.service');
-const messages = require('../models/message.model');
-const reqAuth = require('../middlewares/auth.handler');
+const mangaService = require('../../services/manga.service');
+const messages = require('../../models/message.model');
+const reqAuth = require('../../middlewares/auth.handler');
 
-const { createMangaSchema, updateMangaSchema, deleteMangaSchema } = require('./../models/manga.model');
+const { createMangaSchema, updateMangaSchema, deleteMangaSchema } = require('../../models/manga.model');
 
 const service = new mangaService();
 

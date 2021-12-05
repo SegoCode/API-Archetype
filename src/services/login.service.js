@@ -1,12 +1,15 @@
 class loginService {
-  constructor() {}
+  constructor() {
+    this.token = 'SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+
+  }
 
   authenticate(body) {
-    return '928457-2345-234-523-53';
+    return this;
   }
 
   refresh(body) {
-    return '928457-2345-234-523-53';
+    return this;
   }
 }
 

@@ -6,17 +6,16 @@ const genericResponses = require('./middlewares/generic.handler');
 const logger = require('./middlewares/logger.conf');
 const router = require('./routes');
 
-const port = process.env.PORT || 8020;
+const port = process.env.PORT;
 
 const app = express();
 
 if (typeof process.env.NODE_ENV !== 'undefined' && process.env.NODE_ENV.trim() === 'production') {
   //Hide console logs in production
-  console.log(`✔️ Launch detected on production mode`);
   console.log = function () {};
 } else {
-  // app.use(logger.fileLogger); Optional file logger middleware
-  app.use(logger.consoleLogger);
+  // app.use(logger.fileLogger()); File logger middlewares alternative to nginx logs
+  app.use(logger.consoleLogger());
 }
 
 app.use(compression());
@@ -29,5 +28,5 @@ app.use(genericResponses.notFound());
 
 app.listen(port, () => {
   //Launch server entry point
-  console.log(`🚀 Launch ${process.pid} at http://localhost:${port}`);
+  console.log(`🚀 Launch ${process.pid} at http://127.0.0.1:${port}`);
 });

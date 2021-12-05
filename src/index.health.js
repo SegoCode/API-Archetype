@@ -1,12 +1,13 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
-const port = 8021;
+const port = process.env.PORT;
+const endpoint = 'http://127.0.0.1:' + (port - 1) + '/api/';
 
 app.get('/health', (req, res) => {
   axios({
     method: 'get',
-    url: 'http://localhost:8020/api/',
+    url: endpoint,
     timeout: 1000,
   })
     .then((response) => {
