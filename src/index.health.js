@@ -1,29 +1,34 @@
 const express = require('express');
-const axios = require('axios');
+const http = require('http');
 const app = express();
 const port = process.env.PORT;
-const endpoint = 'http://127.0.0.1:' + (port - 1) + '/api/';
+const ip = process.env.IP;
+
+const options = {
+  hostname: ip,
+  port: port - 1,
+  path: '/api/',
+  method: 'GET',
+};
 
 app.get('/health', (req, res) => {
-  axios({
-    method: 'get',
-    url: endpoint,
-    timeout: 1000,
-  })
-    .then((response) => {
-      res.send({
-        code: response.status,
-        status: 'Online',
-        date: new Date(),
-      });
-    })
-    .catch((err) => {
-      res.send({
-        code: err.code,
-        status: 'Offline',
-        date: new Date(),
-      });
+  con = http.request(options, (externalResponse) => {
+    res.send({
+      code: externalResponse.statusCode,
+      status: 'Online',
+      date: new Date(),
     });
+  });
+
+  con.on('error', (error) => {
+    res.send({
+      code: error.code,
+      status: 'Offline',
+      date: new Date(),
+    });
+  });
+
+  con.end();
 });
 
 app.use((req, res, next) => {

@@ -27,6 +27,7 @@ module.exports = {
       error_file: '/dev/null',
       env: {
         NODE_ENV: 'production',
+        IP: '127.0.0.1',
         PORT: 3001,
       },
     },

@@ -7,15 +7,23 @@ beforeEach(() => {
   //initializeCityDatabase();
 });
 
-describe('Testing responses codes', () => {
+describe('Testing testing access to endpoints', () => {
   describe('Public endpoints', () => {
-    test('Test supertest', async () => {
-      await api.post('/api/auth/login/').expect(400);
+    test('GET /api/', async () => {
+      await api.get('/api/').expect(200);
+    });
+
+    test('POST /api/auth/login/', async () => {
+      let body = {
+        user: 'test',
+        pass: 'test',
+      };
+      await api.post('/api/auth/login/').send(body).expect(200);
     });
   });
 
   describe('Private endpoints', () => {
-    test('Test supertest', async () => {
+    test('POST /api/auth/login/refresh/', async () => {
       await api.post('/api/auth/login/refresh/').expect(401);
     });
   });

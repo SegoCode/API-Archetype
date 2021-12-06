@@ -10,7 +10,7 @@ const port = process.env.PORT;
 
 const app = express();
 
-if (typeof process.env.NODE_ENV !== 'undefined' && process.env.NODE_ENV.trim() === 'production') {
+if (typeof process.env.NODE_ENV !== 'undefined' && (process.env.NODE_ENV.trim() === 'production' || process.env.NODE_ENV.trim() === 'test')) {
   //Hide console logs in production
   console.log = function () {};
 } else {
