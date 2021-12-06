@@ -26,7 +26,9 @@ app.use('/api', router); //Apiv1 entry point
 app.use(genericResponses.internalError());
 app.use(genericResponses.notFound());
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   //Launch server entry point
   console.log(`🚀 Launch ${process.pid} at http://127.0.0.1:${port}`);
 });
+
+module.exports = { app, server };
