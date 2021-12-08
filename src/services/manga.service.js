@@ -6,6 +6,10 @@ class mangaService {
   }
 
   find() {
+    setTimeout(function () {
+      console.log('DB delay');
+    }, 3000);
+
     return this;
   }
 
