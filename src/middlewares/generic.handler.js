@@ -1,4 +1,4 @@
-const messages = require('../models/message.model');
+const messages = require('../Utils/message.utils');
 
 function internalError() {
   return (err, req, res, next) => {

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const loginService = require('../../services/login.service');
-const messages = require('../../models/message.model');
+const messages = require('../../Utils/message.utils');
 const reqAuth = require('../../middlewares/auth.handler');
 
 const { authenticateSchema, refreshteSchema } = require('../../models/login.model');

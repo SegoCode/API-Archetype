@@ -1,4 +1,4 @@
-const messages = require('../models/message.model');
+const messages = require('../Utils/message.utils');
 
 const ROLE = {
   ADMIN: 'admin',

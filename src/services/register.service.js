@@ -3,7 +3,7 @@ class registerService {
     this.token = 'SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
   }
 
-  register(body) {
+  async register(body) {
     return this;
   }
 }

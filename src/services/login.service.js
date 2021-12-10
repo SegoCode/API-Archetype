@@ -1,14 +1,13 @@
 class loginService {
   constructor() {
     this.token = 'SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-
   }
 
-  authenticate(body) {
+  async authenticate(body) {
     return this;
   }
 
-  refresh(body) {
+  async refresh(body) {
     return this;
   }
 }

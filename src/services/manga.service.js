@@ -5,23 +5,19 @@ class mangaService {
     this.precio = 12.99;
   }
 
-  find() {
-    setTimeout(function () {
-      console.log('DB delay');
-    }, 3000);
-
+  async find() {
     return this;
   }
 
-  create(body) {
+  async create(body) {
     return this;
   }
 
-  update(body) {
+  async update(body) {
     return this;
   }
 
-  delete(id) {
+  async delete(id) {
     return this;
   }
 }
