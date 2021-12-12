@@ -59,7 +59,7 @@ messages.RESPOND_INTERNAL_ERROR = function (error) {
   return {
     status: error.status || 500,
     error: 'Internal server error: ' + error.message,
-    message: 'Log generated', //TODO https://www.npmjs.com/package/winston
+    message: 'Log generated: '+ Buffer.from(new Date().toISOString()).toString('base64'), 
   };
 };
 
