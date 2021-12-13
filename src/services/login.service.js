@@ -3,8 +3,8 @@ class loginService {
     this.token = 'SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
   }
 
-  async authenticate(body) {
-    return this;
+   authenticate(body) {
+    return "admin";
   }
 
   async refresh(body) {

@@ -1,15 +1,26 @@
+const jwt = require('jsonwebtoken');
 const messages = require('../Utils/message.utils');
 
 const ROLE = {
-  ADMIN: 'admin',
-  LOGGED: 'logged',
-  PUBLIC: 'public',
+  ADMIN: '3',
+  LOGGED: '2',
+  PUBLIC: '1',
 };
 
 function authRole(role) {
   return (req, res, next) => {
-    if (role === ROLE.LOGGED || role === ROLE.ADMIN) {
-      res.status(messages.UNAUTHORIZED_CODE).json(messages.RESPOND_UNAUTHORIZED());
+    let token = '';
+    if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
+      token = req.headers.authorization.split(' ')[1];
+    }
+    if (role !== ROLE.PUBLIC) {
+      jwt.verify(token, 'your-256-bit-secret', (err, user) => {
+        if (err || user.role < role) {
+          return res.status(messages.UNAUTHORIZED_CODE).json(messages.RESPOND_UNAUTHORIZED());
+        } else {
+          next();
+        }
+      });
     } else {
       next();
     }

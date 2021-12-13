@@ -59,9 +59,8 @@ messages.RESPOND_INTERNAL_ERROR = function (error) {
   return {
     status: error.status || 500,
     error: 'Internal server error: ' + error.message,
-    message: 'Log generated: '+ Buffer.from(new Date().toISOString()).toString('base64'), 
+    message: 'Log generated ticket: ' + new Date().valueOf(),
   };
 };
-
 
 module.exports = messages;

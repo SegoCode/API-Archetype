@@ -9,8 +9,4 @@ const authenticateSchema = Joi.object({
   pass: pass.required(),
 });
 
-const refreshteSchema = Joi.object({
-  token: token.required(),
-});
-
-module.exports = { authenticateSchema, refreshteSchema };
+module.exports = authenticateSchema;
