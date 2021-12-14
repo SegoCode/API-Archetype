@@ -6,6 +6,7 @@ Starter project for my future RESTful APIs and microservices, also to learn Node
  - Easy editable clean architecture
  - Custom logger with file rotation and error trace
  - No transpilers, just vanilla javascript
+ - JWT authentication with different roles
  - Profiles for any environment
  - Health and status microservice
  - Production deploy ready 
