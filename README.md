@@ -6,7 +6,7 @@
  - Custom logger with file rotation and error trace
  - No transpilers, just vanilla javascript
  - Clean arquitecture
- - Deploy profiles
+ - Profiles for any environment
  - Health and status microservice
  - Clustering 
  - Production deploy ready 
