@@ -19,7 +19,7 @@ http
 						code: externalResponse.statusCode,
 						status: 'Online',
 						date: new Date(),
-					})
+					}),
 				);
 				res.end();
 			});
@@ -30,7 +30,7 @@ http
 						code: error.code,
 						status: 'Offline',
 						date: new Date(),
-					})
+					}),
 				);
 				res.end();
 			});
