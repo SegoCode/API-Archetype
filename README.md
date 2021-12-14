@@ -1,4 +1,5 @@
-# node-express-api-archetype
+# Api REST Archetype
+Starter project for my future RESTful APIs and microservices, also to learn Node.js and apply good practices 
 
 
 ## Features
