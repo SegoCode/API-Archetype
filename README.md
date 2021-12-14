@@ -2,7 +2,7 @@
 
 
 ## Features
- - Easy editable architecture
+ - Easy editable clean architecture
  - Custom logger with file rotation and error trace
  - No transpilers, just vanilla javascript
  - Clean arquitecture
