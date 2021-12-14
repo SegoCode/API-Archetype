@@ -8,12 +8,12 @@ Starter project for my future RESTful APIs and microservices, also to learn Node
  - No transpilers, just vanilla javascript
  - Profiles for any environment
  - Health and status microservice
- - Clustering 
  - Production deploy ready 
- - Request validation with Joi
+ - Request validation
  - Gzip compression
  - Testing with junit
- - Monitoring with PM2
+ - Fully integrated with PM2 monitoring and clustering
+ - Documentation with swagger
 
 
 ## Dependencies
