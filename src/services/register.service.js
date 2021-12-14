@@ -1,11 +1,9 @@
 class registerService {
-  constructor() {
-    this.token = 'SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-  }
+	constructor() {}
 
-  async register(body) {
-    return this;
-  }
+	async register(body) {
+		return this;
+	}
 }
 
 module.exports = registerService;

@@ -23,8 +23,8 @@ describe('Testing testing access to endpoints', () => {
   });
 
   describe('Private endpoints', () => {
-    test('POST /api/auth/login/refresh/', async () => {
-      await api.post('/api/auth/login/refresh/').expect(401);
+    test('GET /api/auth/login/refresh/', async () => {
+      await api.get('/api/auth/login/refresh/').expect(401);
     });
   });
 });

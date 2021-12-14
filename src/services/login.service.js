@@ -1,10 +1,16 @@
 class loginService {
-  constructor() {
-    this.token = 'SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-  }
+  constructor() {}
 
-   authenticate(body) {
-    return "admin";
+  async authenticate(body) {
+    await sleep();
+    function sleep() {
+      //Simulate DB
+      return new Promise((resolve) => {
+        setTimeout(resolve, 1000);
+      });
+    }
+
+    return 'admin';
   }
 
   async refresh(body) {

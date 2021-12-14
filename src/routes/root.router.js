@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const messages = require('../Utils/message.utils');
+const messages = require('../utils/message.utils');
 const reqAuth = require('../middlewares/auth.handler');
 
 //GET

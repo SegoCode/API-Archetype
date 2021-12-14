@@ -10,4 +10,4 @@ const registerSchema = Joi.object({
   pass: pass.required(),
 });
 
-module.exports = { registerSchema };
+module.exports =  registerSchema;

@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const compression = require('compression');
 
 const genericResponses = require('./middlewares/generic.handler');
-const logger = require('./middlewares/logger.conf');
+const logger = require('./middlewares/logger.handler');
 const router = require('./routes');
 
 const port = process.env.PORT;
@@ -11,13 +11,12 @@ const port = process.env.PORT;
 const app = express();
 
 if (typeof process.env.NODE_ENV !== 'undefined' && (process.env.NODE_ENV.trim() === 'production' || process.env.NODE_ENV.trim() === 'test')) {
-  //Hide console logs in production
-  console.log = function () {};
+	//Hide console logs in production
+	console.log = function () {};
 } else {
-  //app.use(logger.fileLogger()); //File logger middlewares alternative to nginx logs
-  app.use(logger.consoleLogger());
+	//app.use(logger.fileLogger()); //File logger middlewares alternative to nginx logs
+	app.use(logger.consoleLogger());
 }
-
 
 app.use(compression());
 app.use(bodyParser.json());
@@ -28,8 +27,8 @@ app.use(genericResponses.internalError());
 app.use(genericResponses.notFound());
 
 const server = app.listen(port, () => {
-  //Launch server entry point
-  console.log(`🚀 Launch ${process.pid} at http://127.0.0.1:${port}`);
+	//Launch server entry point
+	console.log(`🚀 Launch ${process.pid} at http://127.0.0.1:${port}`);
 });
 
 module.exports = { app, server };
