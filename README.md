@@ -36,3 +36,4 @@ supertest: ^6.1.6
 - [ ] Swagger documentation
 - [ ] Auto changelog generator
 - [ ] nginx config file
+- [ ] Cache
