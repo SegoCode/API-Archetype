@@ -1,7 +1,13 @@
 {
-	"name": "express-archetype",
+	"name": "express-rest-api-archetype",
+	"description": "Multi paradigm template stateless for my node projects",
+	"author": "SegoCode",
+	"homepage": "https://github.com/SegoCode",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/SegoCode/express-rest-api-archetype"
+	},
 	"version": "1.0.0",
-	"description": "",
 	"main": "index.js",
 	"scripts": {
 		"dev": "npm ci & pm2 start ./pm2.dev.config.js --no-daemon",
@@ -11,7 +17,6 @@
 		"prod_standalone": "set NODE_ENV=production & node ./src/index.js"
 	},
 	"keywords": [],
-	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"compression": "^1.7.4",

@@ -12,7 +12,8 @@ const service = new loginService();
 router.post('/', reqAuth.authRole(reqAuth.ROLE.PUBLIC), async function (req, res) {
 	const validation = authenticateSchema.validate(req.body);
 	if (typeof validation.error === 'undefined') {
-		await service.authenticate(req.body); //TODO Asyc service response role and userdata
+		//TODO: async service response role and user data
+		await service.authenticate(req.body); 
 
 		configAccess = {
 			role: reqAuth.ROLE.ADMIN,
@@ -30,7 +31,7 @@ router.post('/', reqAuth.authRole(reqAuth.ROLE.PUBLIC), async function (req, res
 });
 
 router.get('/refresh', reqAuth.authRole(reqAuth.ROLE.LOGGED), async function (req, res) {
-	//TODO Response with older config
+	//TODO: Response with same jwt config
 	service.refresh(req.body);
 
 	configAccess = {

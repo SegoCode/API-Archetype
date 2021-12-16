@@ -14,7 +14,7 @@ if (typeof process.env.NODE_ENV !== 'undefined' && (process.env.NODE_ENV.trim() 
 	//Hide console logs in production
 	console.log = function () {};
 } else {
-	//app.use(logger.fileLogger()); //File logger middlewares alternative to nginx logs
+	//app.use(logger.fileLogger()); //File logger middleware alternative to nginx logs
 	app.use(logger.consoleLogger());
 }
 
@@ -27,7 +27,7 @@ app.use(genericResponses.internalError());
 app.use(genericResponses.notFound());
 
 const server = app.listen(port, () => {
-	//Launch server entry point
+	//NOTE: Launch server entry point
 	console.log(`🚀 Launch ${process.pid} at http://127.0.0.1:${port}`);
 });
 

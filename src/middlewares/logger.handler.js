@@ -16,7 +16,8 @@ const file = {
 //File logger config
 function fileLogger() {
 	fs.existsSync(file.logDir) || fs.mkdirSync(file.logDir);
-	//flags: 'a' for append, for log rotation check rotating-file-stream
+	//NOTE: flags: 'a' for append, for log rotation check rotating-file-stream
+	//TODO: File rotation
 	let accessLogStream = fs.createWriteStream(path.join(file.logDir, file.logFileName), { flags: 'a' });
 	return morgan(logFormat, { stream: accessLogStream, skip: (req, res) => res.statusCode < file.greaterThan });
 }

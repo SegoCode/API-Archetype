@@ -9,7 +9,7 @@ const service = new mangaService();
 
 //GET
 router.get('/', reqAuth.authRole(reqAuth.ROLE.PUBLIC), async function (req, res) {
-  //comprobar si la validacion de query es igual que la de body
+  //NOTE: Confirm query validation with joi
   const { top } = req.query;
   const total = top || 10;
   res.json(await service.find());
