@@ -30,3 +30,9 @@ jest: ^27.4.3
 supertest: ^6.1.6
 ```
 881.4kB Min - 303.4kB Min + GZIP
+
+## Work in progress
+- [ ] DB Conector
+- [ ] Swagger documentation
+- [ ] Auto changelog generator
+- [ ] nginx config file
