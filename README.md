@@ -37,3 +37,6 @@ supertest: ^6.1.6
 - [ ] Auto changelog generator
 - [ ] nginx config file
 - [ ] Cache
+- [ ] Passport.js
+- [ ] Code coverage
+- [ ] Easy config headers
