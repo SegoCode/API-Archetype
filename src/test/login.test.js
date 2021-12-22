@@ -10,7 +10,7 @@ beforeEach(() => {
 describe('Testing testing access to endpoints', () => {
 	describe('Public endpoints', () => {
 		test('GET /api/', async () => {
-			await api.get('/api/').expect(200).expect('Content-Type', /json/);
+			await api.get('/api/').expect(200);
 		});
 
 		test('POST /api/auth/login/', async () => {
@@ -18,13 +18,13 @@ describe('Testing testing access to endpoints', () => {
 				user: 'test',
 				pass: 'test',
 			};
-			await api.post('/api/auth/login/').send(body).expect(200).expect('Content-Type', /json/);
+			await api.post('/api/auth/login/').send(body).expect(200);
 		});
 	});
 
 	describe('Private endpoints', () => {
 		test('GET /api/auth/login/refresh/', async () => {
-			await api.get('/api/auth/login/refresh/').expect(401).expect('Content-Type', /json/);
+			await api.get('/api/auth/login/refresh').expect(401);
 		});
 	});
 });
