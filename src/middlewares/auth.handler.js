@@ -17,10 +17,13 @@ function authRole(role) {
 			jwt.verify(token, 'your-256-bit-secret', (err, user) => {
 				if (err || user.role < role) {
 					return res.status(messages.UNAUTHORIZED_CODE).json(messages.RESPOND_UNAUTHORIZED());
+				} else {
+					next();
 				}
 			});
+		} else {
+			next();
 		}
-		next();
 	};
 }
 
