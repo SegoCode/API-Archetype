@@ -14,7 +14,6 @@ Starter project for my future RESTful APIs and microservices, also to learn Node
  - Gzip compression
  - Testing with junit
  - Fully integrated with PM2 monitoring and clustering
- - Documentation with swagger
 
 
 ## Dependencies
