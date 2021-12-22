@@ -14,7 +14,7 @@ if (typeof process.env.NODE_ENV !== 'undefined' && (process.env.NODE_ENV.trim() 
 	//Hide console logs in production
 	console.log = function () {};
 } else {
-	
+	//TODO: specified logger for production
 	app.use(logger.fileLogger()); //File logger middleware alternative to nginx logs
 	app.use(logger.consoleLogger());
 }
