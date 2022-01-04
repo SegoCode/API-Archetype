@@ -19,3 +19,5 @@ function xssfilter() {
 		next();
 	};
 }
+
+//TODO: create more security filter

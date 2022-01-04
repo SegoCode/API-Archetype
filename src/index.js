@@ -19,11 +19,13 @@ if (typeof process.env.NODE_ENV !== 'undefined' && (process.env.NODE_ENV.trim() 
 	app.use(logger.consoleLogger());
 }
 
+//TODO: Delete compression
 app.use(compression());
+
 app.use(bodyParser.json());
 app.disable('x-powered-by');
 
-app.use('/api', router); //Apiv1 entry point
+app.use('/1.0', router); //api v1 entry point
 app.use(genericResponses.internalError());
 app.use(genericResponses.notFound());
 
