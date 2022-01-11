@@ -34,4 +34,8 @@ const server = app.listen(port, () => {
 	console.log(`🚀 Launch ${process.pid} at http://127.0.0.1:${port}`);
 });
 
+// const server = https.createServer({ cert: fs.readFileSync('cert'), key: fs.readFileSync('key') }, app).listen(port, function () {
+// 	console.log(`🚀 Launch ${process.pid} at https://127.0.0.1:${port}`);
+// });
+
 module.exports = { app, server };
