@@ -27,6 +27,7 @@ jsonwebtoken: ^8.5.1
 morgan: ^1.10.0
 jest: ^27.4.3
 supertest: ^6.1.6
+xss-filters: ^1.2.7
 ```
 881.4kB Min - 303.4kB Min + GZIP
 
@@ -38,4 +39,4 @@ supertest: ^6.1.6
 - [ ] Cache
 - [ ] Passport.js
 - [ ] Code coverage
-- [ ] Easy config headers
+- [x] Easy config headers
