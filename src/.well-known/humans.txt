@@ -1,0 +1,37 @@
+/* TEAM */
+	Chef:Example
+	Twitter: @Example
+	From:Barcelona, Catalonia, Spain
+
+	UI developer: Example
+	Twitter: @Example
+	From:Barcelona, Catalonia, Spain
+
+	One eyed illustrator: Example
+	Twitter: @Example
+	From:Madrid, Spain
+
+	Standard Man: Example
+	Twitter: @Example
+	From:Barcelona, Catalonia, Spain
+
+	Web designer: Example
+	Twitter: @Example
+	From:Sevilla, Andalucia, Spain
+
+/* THANKS */
+
+	(First) EN Translator: Example
+	Twitter: @Example
+	From: Barcelona, Catalonia, Spain
+
+	ES Translator: Example
+	Twitter: @Example
+	From:Barcelona, Catalonia, Spain
+
+	Media Queries by: Example (@Example) and Example (@Example)
+		
+
+/* SITE */
+	Last update:2001/01/01
+	IDE: Sublime Text, Notepad++, FileZilla

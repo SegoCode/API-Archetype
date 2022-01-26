@@ -1,3 +1,5 @@
+const xssFilters = require('xss-filters');
+
 function clean(data = '') {
 	let isObject = false;
 	if (typeof data === 'object') {
@@ -5,7 +7,7 @@ function clean(data = '') {
 		isObject = true;
 	}
 
-	data = inHTMLData(data).trim();
+	data = xssFilters.inHTMLData(data).trim();
 	if (isObject) data = JSON.parse(data);
 
 	return data;
@@ -20,4 +22,4 @@ function xssfilter() {
 	};
 }
 
-//TODO: create more security filter
+module.exports = { xssfilter };
