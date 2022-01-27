@@ -15,6 +15,7 @@ Starter project for my future RESTful APIs and microservices, also to learn Node
  - Testing with junit
  - Using many internet standards
  - Fully integrated with PM2 monitoring and clustering
+ - Securized HTTP headers
 
 
 
