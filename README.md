@@ -9,11 +9,13 @@ Starter project for my future RESTful APIs and microservices, also to learn Node
  - JWT authentication with different roles
  - Profiles for any environment
  - Health and status microservice
- - Production deploy ready 
+ - Production deploy ready with pm2
+ - Customizable logs or pm2 standard  
  - Request validation
- - Gzip compression
  - Testing with junit
+ - Using many internet standards
  - Fully integrated with PM2 monitoring and clustering
+
 
 
 ## Dependencies
