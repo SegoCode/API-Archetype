@@ -20,7 +20,7 @@ http
 						code: externalResponse.statusCode,
 						status: 'Online',
 						date: new Date(),
-						responseTime: (new Date().getTime() - start_time),
+						responseTime: new Date().getTime() - start_time,
 					}),
 				);
 				res.end();

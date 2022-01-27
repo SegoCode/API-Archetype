@@ -6,8 +6,9 @@ morgan.token('body', (req, res) => JSON.stringify(req.body));
 const logFormat = '[:date[iso]] :remote-addr - :method :url :status - :response-time ms - :body';
 
 const file = {
-	logDir: 'logs',
+	logDir: 'logs/morgan',
 	logFileName: 'api.log',
+	//TODO: Explain this js and greaterThan
 	greaterThan: () => {
 		return typeof process.env.NODE_ENV !== 'undefined' && process.env.NODE_ENV.trim() === 'production' ? 499 : 0;
 	},
