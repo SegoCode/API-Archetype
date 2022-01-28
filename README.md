@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://github.com/SegoCode/Express-api-rest-archetype/blob/main/media/header.png" alt="Express x Node.js"/>
+  <img src="https://github.com/SegoCode/Express-api-rest-archetype/blob/main/media/header-alternative.png" alt="Express x Node.js"/>
 </p>
 
 
