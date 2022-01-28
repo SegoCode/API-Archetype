@@ -9,7 +9,7 @@ Starter project for my future RESTful APIs and microservices, also to learn Node
 
 
 ## Features
- - Easy editable clean architecture
+ - Easy editable clean architecture highly scalable
  - Custom logger with file rotation and error trace
  - No transpilers, just vanilla javascript
  - JWT authentication with different roles
