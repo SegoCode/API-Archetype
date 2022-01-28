@@ -4,7 +4,7 @@
 </p>
 
 
-# Api REST Archetype
+# RESTFUL API STATELESS
 Starter project for my future RESTful APIs and microservices, also to learn Node.js and apply good practices 
 
 
