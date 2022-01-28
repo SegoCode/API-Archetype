@@ -37,9 +37,6 @@ xss-filters: ^1.2.7
 ## Work in progress
 - [ ] DB Conector
 - [ ] Swagger documentation
-- [ ] Auto changelog generator
 - [ ] nginx config file
 - [ ] Cache
-- [ ] Passport.js
 - [ ] Code coverage
-- [x] Easy config headers
