@@ -1,3 +1,9 @@
+
+<p align="center">
+  <img src="https://github.com/SegoCode/Express-api-rest-archetype/blob/main/media/header.png" alt="Sublime's custom image"/>
+</p>
+
+
 # Api REST Archetype
 Starter project for my future RESTful APIs and microservices, also to learn Node.js and apply good practices 
 
