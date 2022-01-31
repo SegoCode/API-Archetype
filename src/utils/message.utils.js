@@ -1,19 +1,31 @@
 let messages = {};
 
 messages.OK_CODE = 200;
+messages.CREATED = 201;
+messages.DELETED = 204;
 messages.BAD_REQUEST = 400;
 messages.UNAUTHORIZED_CODE = 401;
 messages.FORBIDDEN = 403;
 messages.NOT_FOUND = 404;
 messages.NOT_ALLOWED = 405;
+messages.CONFLICT = 409;
+messages.TOO_LARGE = 413;
 messages.INTERNAL_ERROR = 500;
 
 messages.RESPOND_OK_CUSTOM = function (msg) {
   return {
-    status: this.RESPOND_OK_CODE,
+    status: this.OK_CODE,
     message: msg,
   };
 };
+
+messages.RESPOND_CREATED_CUSTOM = function (msg) {
+  return {
+    status: this.CREATED,
+    message: msg,
+  };
+};
+
 
 messages.RESPOND_BAD_REQUEST = function (error) {
   return {
@@ -52,6 +64,21 @@ messages.RESPOND_NOT_ALLOWED = function () {
     status: this.NOT_ALLOWED,
     error: 'Method Not Allowed',
     message: 'Use /api/',
+  };
+};
+
+messages.RESPOND_CONFLICT = function (msg) {
+  return {
+    status: this.CONFLICT,
+    message: msg,
+  };
+};
+
+messages.RESPOND_TOO_LARGE = function () {
+  return {
+    status: this.TOO_LARGE,
+    error: 'Request Entity Too Large',
+    message: 'Parameters exceeded the maximum',
   };
 };
 
