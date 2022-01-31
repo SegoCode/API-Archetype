@@ -66,7 +66,7 @@ npm run dev
 | **403** | **Forbidden** | Returned when permissions do not allow the operation. 
 | **404** | **Not Found** | When a particular resource doesn’t exist or couldn’t be found. |
 | **405** | **Method Not Allowed** | The resource was found, but doesn’t support any action. |
-| **409** | **Conflict** | A change requested by the client is being rejected, due to a condition imposed by the server. The exact reasons for this response will vary from one resource to the next. An example might be attempting to delete a category whose deletion would cause products to be orphaned. Additional information about the conflict, and about how to resolve it, might be available in the response's `details` section. |
+| **409** | **Conflict** | A change requested by the client is being rejected, due to a condition imposed by the server. The exact reasons for this response will vary from one resource to the next. An example might be attempting to delete a category whose deletion would cause products to be orphaned. Additional information about the conflict, and about how to resolve it, might be available in the response's `message` section. |
 | **413** | **Request Entity Too Large** | When the client requests too many objects. For example, the `limit` parameter exceeded the maximum. |
 | **429** | **Too Many Requests** | When an OAuth client exceeds the [rate limit](TODO) for API requests to a store. |
 
