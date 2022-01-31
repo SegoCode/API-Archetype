@@ -65,7 +65,7 @@ npm run dev
 | **401** | **Unauthorized** | This response is sent when your client failed to provide credentials or its credentials were invalid. |
 | **403** | **Forbidden** | Returned when permissions do not allow the operation. 
 | **404** | **Not Found** | When a particular resource doesn’t exist or couldn’t be found. |
-| **405** | **Method Not Allowed** | The resource was found, but doesn’t support the request method. Issued when either a specific method isn’t yet implemented on a resource, or the resource doesn’t support the method at all. For example, a `PUT` on `/orders` is invalid, but a `PUT` on `/orders/{_id_}` is valid. |
+| **405** | **Method Not Allowed** | The resource was found, but doesn’t support any action. |
 | **409** | **Conflict** | A change requested by the client is being rejected, due to a condition imposed by the server. The exact reasons for this response will vary from one resource to the next. An example might be attempting to delete a category whose deletion would cause products to be orphaned. Additional information about the conflict, and about how to resolve it, might be available in the response's `details` section. |
 | **413** | **Request Entity Too Large** | When the client requests too many objects. For example, the `limit` parameter exceeded the maximum. |
 | **429** | **Too Many Requests** | When an OAuth client exceeds the [rate limit](TODO) for API requests to a store. |
