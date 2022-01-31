@@ -31,7 +31,19 @@ Starter project for my future RESTful APIs and microservices, also to learn Node
 - [ ] Cache
 - [ ] Code coverage
 
+## Getting Started
 
+```sh
+# HTTPS
+$ git clone https://github.com/SegoCode/Express-api-rest-archetype.git
+```
+```sh
+cd Express-api-rest-archetype
+```
+```sh
+# Auto run 'npm ci' 
+npm run dev
+```
 
 ## 2xx Success 
 
