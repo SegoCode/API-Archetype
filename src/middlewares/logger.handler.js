@@ -27,5 +27,5 @@ function fileLogger() {
 function consoleLogger() {
 	return morgan(logFormat);
 }
-
+//TODO: Use pm2 for log the request
 module.exports = { fileLogger, consoleLogger };
