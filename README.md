@@ -22,11 +22,11 @@ Starter project for my future RESTful APIs and microservices, also to learn Node
  - Using many internet standards
  - Fully integrated with PM2 monitoring and clustering
  - Securized HTTP headers
+ - Swagger documentation
 
 
 ## Work in progress
 - [ ] DB Conector
-- [ ] Swagger documentation
 - [ ] nginx config file
 - [ ] Cache
 - [ ] Code coverage
