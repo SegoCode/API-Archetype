@@ -7,8 +7,8 @@ module.exports = {
       script: './src/index.js',
       watch: true,
       restart_delay: 5000,
-      out_file: '/dev/null',
-      error_file: '/dev/null',
+      out_file: './logs/API_EXPRESS_out.log',
+      error_file: './logs/API_EXPRESS_err.log',
       env: {
         NODE_ENV: 'development',
         PORT: 80,
@@ -20,8 +20,8 @@ module.exports = {
       script: './src/index.health.js',
       watch: true,
       restart_delay: 5000,
-      out_file: '/dev/null',
-      error_file: '/dev/null',
+      out_file: './logs/API_EXPRESS_HEALTH_out.log',
+      error_file: './logs/API_EXPRESS_HEALTH_err.log',
       env: {
         NODE_ENV: 'development',
         IP: '127.0.0.1',

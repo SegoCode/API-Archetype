@@ -17,12 +17,9 @@ let httpsState = false;
 if (typeof process.env.NODE_ENV !== 'undefined' && process.env.NODE_ENV.trim() === 'production') {
 	//Hide console logs in production
 	console.log = function () {};
-
 	//Set https state for createServer function
 	httpsState = true;
 } else {
-	//TODO: specified logger for production maybe morgan create a log for instance, use a pm2 logs
-	app.use(logger.fileLogger()); //File logger middleware alternative to nginx or pm2 logs
 	app.use(logger.consoleLogger());
 }
 
@@ -42,7 +39,6 @@ app.disable('x-powered-by');
 //API v1, entry point
 app.use('/v1.0', router);
 
-//The relative path is blocked by Node.js, this is a bypass,
 //To prevent injections in sendFile() function use file name like endpoint
 app.get('/.well-known/security.txt', function (req, res) {
 	//Security file for blackHats, see more: https://securitytxt.org/
@@ -70,7 +66,7 @@ app.use(genericResponses.notFound());
 
 let server;
 if (httpsState) {
-	//TODO: Specify HTTPS certificate
+	//TODO: Specify HTTPS certificate in env
 	server = https.createServer({ cert: fs.readFileSync('cert'), key: fs.readFileSync('key') }, app).listen(port, function () {
 		console.log(`🚀 Launch ${process.pid} at port: ${port}`);
 	});

@@ -9,8 +9,8 @@ module.exports = {
 			instances: 'max',
 			max_restarts: 10,
 			max_memory_restart: '8G',
-			out_file: './logs/pm2/API_EXPRESS_out.log',
-			error_file: './logs/pm2/API_EXPRESS_err.log',
+			out_file: '/dev/null',
+			error_file: './logs/API_EXPRESS_err.log',
 			merge_logs: true,
 			restart_delay: 1000,
 			env: {
@@ -25,8 +25,8 @@ module.exports = {
 			exec_mode: 'cluster',
 			instances: '1',
 			max_memory_restart: '500M',
-			out_file: './logs/pm2/API_EXPRESS_HEALTH_out.log',
-			error_file: './logs/pm2/API_EXPRESS_HEALTH_out.log',
+			out_file: '/dev/null',
+			error_file: './logs/API_EXPRESS_HEALTH_out.log',
 			merge_logs: true,
 			restart_delay: 1000,
 			env: {
