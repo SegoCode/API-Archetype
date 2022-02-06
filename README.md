@@ -24,13 +24,6 @@ Starter project for my future RESTful APIs and microservices, also to learn Node
  - Securized HTTP headers
  - Swagger documentation
 
-
-## Work in progress
-- [ ] DB Conector
-- [ ] nginx config file
-- [ ] Cache
-- [ ] Code coverage
-
 ## Getting Started
 
 ```sh
