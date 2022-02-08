@@ -7,6 +7,8 @@ const authenticateSchema = require('../../models/login.model');
 
 const service = new loginService();
 
+const keySign = process.env.JWT_KEY;
+
 const configExpiration = {
 	expiresIn: '2h',
 };
@@ -20,7 +22,7 @@ router.post('/', reqAuth.authRole(reqAuth.ROLE.PUBLIC), async function (req, res
 
 		configAccess = { role: reqAuth.ROLE.ADMIN };
 
-		const token = jwt.sign(configAccess, 'your-256-bit-secret', configExpiration);
+		const token = jwt.sign(configAccess, keySign, configExpiration);
 		res.json({ token: token });
 	} else {
 		res.status(messages.BAD_REQUEST).json(messages.RESPOND_BAD_REQUEST(validation.error.message));

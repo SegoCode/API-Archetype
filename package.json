@@ -10,7 +10,7 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"dev": "npm ci & pm2 start ./pm2.dev.config.js --no-daemon",
+		"dev": "npm ci & pm2 kill & pm2 start ./pm2.dev.config.js --no-daemon",
 		"prod": "pm2 start ./pm2.prod.config.js",
 		"test": "set NODE_ENV=test & jest --coverage"
 	},

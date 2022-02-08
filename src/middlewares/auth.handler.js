@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
 const messages = require('../utils/message.utils');
 
+const keySign = process.env.JWT_KEY;
+
 const ROLE = {
 	ADMIN: '3',
 	LOGGED: '2',
@@ -14,7 +16,7 @@ function authRole(role) {
 			token = req.headers.authorization.split(' ')[1];
 		}
 		if (role !== ROLE.PUBLIC) {
-			jwt.verify(token, 'your-256-bit-secret', (err, user) => {
+			jwt.verify(token, keySign, (err, user) => {
 				if (err || user.role < role) {
 					return res.status(messages.UNAUTHORIZED_CODE).json(messages.RESPOND_UNAUTHORIZED());
 				} else {

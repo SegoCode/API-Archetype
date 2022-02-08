@@ -16,6 +16,7 @@ module.exports = {
 			env: {
 				NODE_ENV: 'production',
 				PORT: 3000,
+				JWT_KEY: 'your-256-bit-secret'
 			},
 		},
 
@@ -33,6 +34,7 @@ module.exports = {
 				NODE_ENV: 'production',
 				IP: '127.0.0.1',
 				PORT: 3001,
+				JWT_KEY: 'your-256-bit-secret'
 			},
 		},
 	],
