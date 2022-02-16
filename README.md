@@ -38,5 +38,6 @@ cd Express-api-rest-archetype
 npm run dev
 ```
 
+## Documentation
 
-
+Check the wiki for more info https://github.com/SegoCode/API-Archetype/wiki
