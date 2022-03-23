@@ -1,7 +1,7 @@
-class mangaService {
+class libroService {
 	constructor() {
 		this.id = 4432;
-		this.titulo = 'Konosuba';
+		this.titulo = 'Como hacer una API RESTFULL';
 		this.precio = 12.99;
 	}
 
@@ -22,4 +22,4 @@ class mangaService {
 	}
 }
 
-module.exports = mangaService;
+module.exports = libroService;
