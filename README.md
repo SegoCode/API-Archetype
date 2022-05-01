@@ -9,14 +9,13 @@ Starter project for my future RESTful APIs and microservices, also to learn Node
 
 
 ## Features
- - Easy editable clean architecture highly scalable
- - Custom logger with file rotation and error trace
+ - Easy editable clean architecture highly scalable 
+ - Customizable logs with file rotation and error trace or pm2 standard  
  - No transpilers, just vanilla javascript
  - JWT authentication with different roles
  - Profiles for any environment
  - Health and status microservice
- - Production deploy ready with pm2
- - Customizable logs or pm2 standard  
+ - Production deploy ready with pm2 
  - Request validation
  - Testing with junit
  - Using many internet standards
