@@ -1,7 +1,7 @@
-class libroService {
+class bookService {
 	constructor() {
 		this.id = 4432;
-		this.titulo = 'Como hacer una API RESTFULL';
+		this.titulo = 'How to make api rest full';
 		this.precio = 12.99;
 	}
 
@@ -22,4 +22,4 @@ class libroService {
 	}
 }
 
-module.exports = libroService;
+module.exports = bookService;

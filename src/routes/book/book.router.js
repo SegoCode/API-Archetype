@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const libroService = require('../../services/libro.service');
+const bookService = require('../../services/book.service');
 const messages = require('../../utils/message.utils');
 const reqAuth = require('../../middlewares/auth.handler');
 
-const { createLibroSchema, updateLibroSchema, deleteLibroSchema } = require('../../models/libro.model');
+const { createBookSchema, updateBookSchema, deleteBookSchema } = require('../../models/book.model');
 
-const service = new libroService();
+const service = new bookService();
 
 //GET
 router.get('/', reqAuth.authRole(reqAuth.ROLE.PUBLIC), async function (req, res) {
@@ -17,7 +17,7 @@ router.get('/', reqAuth.authRole(reqAuth.ROLE.PUBLIC), async function (req, res)
 
 //POST
 router.post('/', reqAuth.authRole(reqAuth.ROLE.ADMIN), async function (req, res) {
-  const validation = createLibroSchema.validate(req.body);
+  const validation = createBookSchema.validate(req.body);
   if (typeof validation.error === 'undefined') {
     res.json(service.create(req.body));
   } else {
@@ -27,7 +27,7 @@ router.post('/', reqAuth.authRole(reqAuth.ROLE.ADMIN), async function (req, res)
 
 //PUT
 router.put('/', reqAuth.authRole(reqAuth.ROLE.LOGGED), async function (req, res) {
-  const validation = updateLibroSchema.validate(req.body);
+  const validation = updateBookSchema.validate(req.body);
   if (typeof validation.error === 'undefined') {
     res.json(service.update(req.body));
   } else {
@@ -37,7 +37,7 @@ router.put('/', reqAuth.authRole(reqAuth.ROLE.LOGGED), async function (req, res)
 
 //DELETE
 router.delete('/:id', reqAuth.authRole(reqAuth.ROLE.ADMIN), async function (req, res) {
-  const validation = deleteLibroSchema.validate(req.params);
+  const validation = deleteBookSchema.validate(req.params);
   if (typeof validation.error === 'undefined') {
     res.json(service.delete(req.params.id));
   } else {
