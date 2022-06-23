@@ -33,6 +33,7 @@ $ git clone https://github.com/SegoCode/Express-api-rest-archetype.git
 cd Express-api-rest-archetype
 ```
 ```sh
+npm install pm2 -g
 # Auto run 'npm ci' 
 npm run dev
 ```
