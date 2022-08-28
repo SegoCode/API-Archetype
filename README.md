@@ -1,10 +1,8 @@
-
+# Express api boilerplate
 <p align="center">
   <img src="https://github.com/SegoCode/Express-api-rest-archetype/blob/main/media/header-alternative.png" alt="Express x Node.js"/>
 </p>
 
-
-## RESTful API stateless boilerplate
 Starter project for my future RESTful APIs and microservices, also to learn Node.js and apply good practices 
 
 
@@ -23,7 +21,7 @@ Starter project for my future RESTful APIs and microservices, also to learn Node
  - Securized HTTP headers
  - Swagger documentation
 
-## Getting Started
+## Usage & info
 
 ```sh
 # HTTPS
